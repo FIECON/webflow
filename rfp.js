@@ -202,7 +202,9 @@ function calculateValues(serviceArea) {
     let currency = convertToCurrencySymbol(location);
 
     $('#RFP-result-category').text(jsonData[serviceArea].title);
-    $('#RFP-price').text(currency + start.toLocaleString() + ' - ' + currency + end.toLocaleString());
+    let presemtedPrice = currency + start.toLocaleString() + ' - ' + currency + end.toLocaleString();
+    $('#RFP-price').text(presemtedPrice);
+    $('#Presented-price').text(presemtedPrice);
 
     // Render steps
     let html = '';
