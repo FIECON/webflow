@@ -220,18 +220,25 @@ function calculateValues(serviceArea) {
     $('#RFP-request').attr('href', 'mailto:bd@fiecon.com?subject=' + encodeURIComponent('Full RFP request from: ' + $('#First-name').val() + ' ' + $('#Last-name').val()));
     }
 
+function validateSelection() {
+    return $('input:checked').val() !== undefined;
+}
+
 function onPageLoad() { 
 
     $('#continue').click(function(e) {
         e.preventDefault();
+
         selectedService = $('input[name="services"]:checked').val();
-        filterCheckboxesByServiceAddons(selectedService)
+        filterCheckboxesByServiceAddons(selectedService);
 
         $('#step1').addClass('hide');
         $('#step2').removeClass('hide');
-        $('html, body').animate({
-            scrollTop: 400
-            }, 'slow');
+        if (validateSelection()) {
+            $('html, body').animate({
+                scrollTop: 400
+                }, 'slow');
+        }
     });
     $('#back').click(function(e) {
         e.preventDefault();
