@@ -207,14 +207,15 @@ function calculateValues(serviceArea) {
     $('#presented-price').text(presentedPrice);
 
     // Render steps
-    let html = '';
+    let html = '<ol class="body-2" style="text-align:left;">';
     jsonData[serviceArea].steps.forEach(item => {
-        html += `<div class="radio-input radio-results" style="margin-bottom: 8px"><img src="https://uploads-ssl.webflow.com/64024978031181fc8c1e2e3e/65fed6f861e9120bf58c5b7d_tick.svg" loading="lazy" alt=""><div class="body-2">${item}</div></div>`;
+        html += `<li>${item}</li>`;
         });
     activeAddons.forEach(item => {
-        html += `<div class="radio-input radio-results" style="margin-bottom: 8px"><img src="https://uploads-ssl.webflow.com/64024978031181fc8c1e2e3e/65fed6f861e9120bf58c5b7d_tick.svg" loading="lazy" alt=""><div class="body-2">Add on – ${item}</div></div>`;
+        html += `<li>${item}</li>`;
         });
-    html += `<div class="radio-input radio-results"><img src="https://uploads-ssl.webflow.com/64024978031181fc8c1e2e3e/65fed6f861e9120bf58c5b7d_tick.svg" loading="lazy" alt=""><div class="body-2">Teleconferences, meeting minutes, and project management</div></div>`;
+    html += `<li>Teleconferences, meeting minutes, and project management</li>`;
+    html = '</ol>';
     $('#steps').html(html);
 
     $('#RFP-request').attr('href', 'mailto:bd@fiecon.com?subject=' + encodeURIComponent('Full RFP request from: ' + $('#First-name').val() + ' ' + $('#Last-name').val()));
