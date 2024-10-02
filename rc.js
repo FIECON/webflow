@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if (hashedName) {
         console.log("Hashed Name:", hashedName);
         hashedName = decryptCaesarCipher(hashedName, 3);
-        $('#name').text(hashedName);
+        let firstName = hashedName.split(' ')[0];
+        $('#full-name').text(hashedName);
+        $('#full-name').prop('disabled', true);
+        $('#name').text(firstName);
         // You can use hashedName for further processing here
     } else {
         window.location.href = 'https://fiecon.com';
