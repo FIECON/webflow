@@ -23,12 +23,6 @@ function decryptCaesarCipher(str, shift) {
     return result;
 }
 
-// Test the decryption with one of the hashed names
-let hashedName = "Vdqmhhy_Edox"; // Example hashed name
-let decryptedName = decryptCaesarCipher(hashedName, 3);
-console.log(decryptedName); // Outputs: "Sanjeev Balu"
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     let hashedName = urlParams.get('id');
