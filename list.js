@@ -15,5 +15,5 @@ function filterDatesByYear(dateSelector, year) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const currentYear = new Date().getFullYear();
-    filterDatesByYear(".date", currentYear);
+    // filterDatesByYear(".date", currentYear);
 });
