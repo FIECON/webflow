@@ -28,7 +28,7 @@ function filterDatesByYear(dateSelector, year) {
     $(dateSelector).each(function() {
         // Get the date text and parse it
         const dateText = $(this).text();
-        const [day, month, fullYear] = dateText.split('/').map(num => parseInt(num, 10));
+        const fullYear = parseInt(dateText.split(', ')[1].trim(), 10);
         
         // If the year doesn't match the filter year
         if (fullYear !== year) {
